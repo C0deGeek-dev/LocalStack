@@ -1,0 +1,21 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: publish release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      # LocalStack is the landing page and keeps no CHANGELOG; let GitHub
+      # generate notes from the commits since the previous tag.
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true

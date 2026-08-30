@@ -1,0 +1,20 @@
+# EditorConfig — editor defaults for the static landing page.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{html,css,svg}]
+indent_style = space
+indent_size = 2
+
+[*.{yml,yaml,json}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+# Markdown uses two trailing spaces for hard line breaks.
+trim_trailing_whitespace = false

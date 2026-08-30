@@ -1,0 +1,53 @@
+name: Links and freshness
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    # Weekly content-freshness check; outbound links rot independently of pushes.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
+        with:
+          # Outbound links only: scheme filters skip same-page anchors and
+          # root-relative paths that need a served site to resolve.
+          args: --no-progress --scheme https --scheme http index.html README.md CONTRIBUTING.md SECURITY.md CODE_OF_CONDUCT.md
+          fail: true
+
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Landing copy matches the release train
+        shell: bash
+        run: |
+          version="$(tr -d '[:space:]' < VERSION)"
+          expected="release train: \`v${version}\`"
+          if ! grep -qF "$expected" README.md; then
+            echo "::error::Landing copy is stale: README.md does not state the current release train (expected '${expected}' from VERSION=${version})."
+            exit 1
+          fi
+          # The index.html footer carries the same train string; guard it too so a
+          # hotfix that edits the page (bypassing the LocalHub release ceremony)
+          # can't ship a stale footer with green CI.
+          footer="release train v${version}"
+          if ! grep -qF "$footer" index.html; then
+            echo "::error::Landing copy is stale: index.html does not state the current release train (expected '${footer}' from VERSION=${version})."
+            exit 1
+          fi
+          echo "Landing copy matches release train v${version} (README + index.html)."
