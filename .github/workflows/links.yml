@@ -43,7 +43,7 @@ jobs:
             exit 1
           fi
           # The index.html footer carries the same train string; guard it too so a
-          # hotfix that edits the page (bypassing the LocalHub release ceremony)
+          # hotfix that edits the page without the coordinated release ceremony
           # can't ship a stale footer with green CI.
           footer="release train v${version}"
           if ! grep -qF "$footer" index.html; then
