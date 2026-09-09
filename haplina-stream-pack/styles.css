@@ -1,0 +1,194 @@
+@import url("../styles.css");
+
+:root {
+  --haplina-violet: #c59cff;
+  --haplina-pink: #ff93d2;
+  --haplina-cyan: #74e8dc;
+}
+
+body.haplina-site {
+  background:
+    radial-gradient(circle at 14% -8%, rgba(197, 156, 255, 0.17), transparent 31%),
+    radial-gradient(circle at 88% 18%, rgba(116, 232, 220, 0.12), transparent 27%),
+    var(--bg);
+}
+
+.haplina-site .site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.haplina-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(197, 156, 255, 0.55);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(197, 156, 255, 0.18), rgba(116, 232, 220, 0.08));
+  color: var(--haplina-violet);
+  font: 900 1rem/1 "Cascadia Mono", Consolas, monospace;
+  box-shadow: 0 0 28px rgba(197, 156, 255, 0.15);
+}
+
+.haplina-site .eyebrow { color: var(--haplina-violet); }
+
+.haplina-main {
+  width: min(100% - 48px, 940px);
+  margin-inline: auto;
+  padding: 74px 0 96px;
+}
+
+.haplina-hero {
+  padding: 34px 0 56px;
+}
+
+.haplina-hero h1 {
+  max-width: 780px;
+}
+
+.haplina-hero .lede {
+  max-width: 790px;
+}
+
+.haplina-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+}
+
+.haplina-badge {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(13, 20, 27, 0.72);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.haplina-section,
+.legal-section {
+  margin-top: 24px;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(17, 28, 36, 0.86), rgba(10, 16, 22, 0.88));
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.haplina-section h2,
+.legal-section h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+}
+
+.haplina-section h3,
+.legal-section h3 {
+  margin: 26px 0 8px;
+  font-size: 1.05rem;
+}
+
+.haplina-section p,
+.haplina-section li,
+.legal-section p,
+.legal-section li {
+  color: #b7c5c1;
+  line-height: 1.72;
+}
+
+.haplina-section strong,
+.legal-section strong { color: var(--ink); }
+
+.haplina-section a,
+.legal-section a,
+.haplina-footer a {
+  color: var(--haplina-cyan);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.feature-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(7, 11, 15, 0.55);
+}
+
+.feature-card h3 { margin: 0 0 8px; }
+.feature-card p { margin: 0; }
+
+.oauth-callout {
+  margin-top: 22px;
+  padding: 20px;
+  border-left: 3px solid var(--haplina-violet);
+  border-radius: 0 10px 10px 0;
+  background: rgba(197, 156, 255, 0.08);
+}
+
+.oauth-callout p:last-child { margin-bottom: 0; }
+
+.legal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 0;
+}
+
+.legal-nav a {
+  display: inline-flex;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--muted);
+  background: rgba(13, 20, 27, 0.72);
+}
+
+.legal-nav a:hover,
+.legal-nav a:focus-visible {
+  color: var(--ink);
+  border-color: #405463;
+}
+
+.haplina-footer {
+  width: min(100% - 48px, 940px);
+  margin-inline: auto;
+  padding: 28px 0 48px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.haplina-footer p { margin-bottom: 8px; }
+
+.notice {
+  padding: 16px 18px;
+  border: 1px solid rgba(240, 183, 90, 0.35);
+  border-radius: 10px;
+  background: rgba(240, 183, 90, 0.07);
+}
+
+@media (max-width: 760px) {
+  .haplina-main,
+  .haplina-footer { width: min(100% - 30px, 940px); }
+
+  .haplina-main { padding-top: 46px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .haplina-site .site-header { align-items: flex-start; }
+  .haplina-site nav { flex-wrap: wrap; justify-content: flex-end; }
+}
