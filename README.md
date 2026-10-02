@@ -1,3 +1,5 @@
+![LocalStack — Your starting point for local AI.](docs/assets/readme-banner.svg)
+
 <div align="center">
   <h1>LocalStack</h1>
   <p><strong>The front door to the LocalX ecosystem.</strong></p>
@@ -15,6 +17,106 @@
 LocalStack explains how the four LocalX tools fit together, shows the evidence
 behind the agent harness, and gives new users one clear place to begin. Current
 release train: `v5.0.0`.
+
+## Choose your starting point
+
+| I want to… | Go here |
+|---|---|
+| Install LocalX and keep it updated | [Install the tools](#install-localx) |
+| Run a model on my computer | [LocalBox](https://github.com/C0deGeek-dev/LocalBox#run-your-first-model) |
+| Code with a local or hosted model | [LocalPilot](https://github.com/C0deGeek-dev/LocalPilot#your-first-coding-session) |
+| Review and reuse project lessons | [LocalMind](https://github.com/C0deGeek-dev/LocalMind#start-with-the-browser-interface) |
+| Find better model settings | [LocalBench](https://github.com/C0deGeek-dev/LocalBench#tune-a-model-you-already-use) |
+
+**This repository contains the LocalX website.** You do not need to clone it to
+use the tools. [Open the site](https://c0degeek-dev.github.io/LocalStack/) for an
+overview, or install directly below.
+
+## Install LocalX
+
+**No programming tools or compilation required.** The installer downloads ready-to-run
+applications and checks their SHA-256 checksums. You get **LocalBox, LocalPilot,
+LocalMind, and LocalBench**, plus `localx` for managing them and the llama.cpp
+engine for running models. You do not need to clone this repository.
+
+### 1. Run the installer
+
+**Windows 10/11 (64-bit Intel or AMD):** open the Start menu, type **PowerShell**,
+and open it. Paste this command, then press **Enter**:
+
+```powershell
+irm https://raw.githubusercontent.com/C0deGeek-dev/LocalPilot/main/install/install.ps1 | iex
+```
+
+**Linux (x86-64 or ARM64) / macOS (Apple Silicon):** open **Terminal**, paste
+this command, then press **Enter**:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/C0deGeek-dev/LocalPilot/main/install/install.sh | sh
+```
+
+### 2. Let your terminal find the commands
+
+`PATH` is the list of folders your terminal searches for applications. Add the
+LocalX folder once so commands such as `localx update` work from any directory.
+
+<details>
+<summary><strong>Windows — paste this into the same PowerShell window</strong></summary>
+
+```powershell
+$localxBin = Join-Path $env:LOCALAPPDATA 'localx\bin'
+$userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
+if (($userPath -split ';') -notcontains $localxBin) {
+    [Environment]::SetEnvironmentVariable('Path', "$localxBin;$userPath", 'User')
+}
+$env:Path = "$localxBin;$env:Path"
+```
+
+This enables the commands in this window and saves the setting for future
+terminals. If another open terminal cannot find them, close and reopen it.
+
+</details>
+
+<details>
+<summary><strong>Linux / macOS — add LocalX to your shell's PATH</strong></summary>
+
+Paste this into your terminal:
+
+```sh
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/localx/bin:$PATH"
+```
+
+To keep it for future terminals, add the same line to your shell configuration:
+`~/.bashrc` for Bash or `~/.zshrc` for Zsh. Use the directory printed by the
+installer if it differs.
+
+</details>
+
+### 3. Check the installation
+
+```sh
+localx status
+```
+
+You should see the installed tools and engine. **Installing the tools does not
+download an AI model**; choose one when you start using LocalBox.
+
+Want to read the installer before running it, check platform support, or install
+a specific version? See the [installation guide](https://github.com/C0deGeek-dev/LocalPilot/blob/main/docs/install.md).
+
+## Updates and troubleshooting
+
+| I want to… | Run |
+|---|---|
+| Update the whole stack and model engine | `localx update` |
+| See installed versions | `localx status` |
+| Diagnose installation problems | `localx doctor` |
+| Retry an incomplete installation | `localx install` |
+
+Ordinary installs use published releases; updates do not require Rust or Git.
+If a command is “not recognized” or “not found”, complete the PATH step above.
+If an older installation is taking precedence, `localx doctor` identifies it;
+review its findings before using `localx doctor --fix` to remove old copies.
 
 ## Privacy by design
 
@@ -46,6 +148,9 @@ LocalBox ──> LocalBench
            ▼
       LocalPilot <──> LocalMind
 ```
+
+<details>
+<summary><strong>Contribute to the website: preview, layout, and deployment</strong></summary>
 
 ## Preview locally
 
@@ -91,6 +196,8 @@ LocalStack/
 GitHub Pages publishes the static repository. A content-only change needs no
 generated build artifact—update the source files, preview them locally, and let
 Pages serve the committed result.
+
+</details>
 
 ## License
 
