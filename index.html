@@ -41,56 +41,66 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Your local AI toolkit</p>
-        <h1 id="hero-title">From local model to useful coding agent.</h1>
+        <h1 id="hero-title">Your machine.<br>Your AI.<br><span class="gradient-text">Your rules.</span></h1>
         <p class="lede">
-          LocalStack brings four focused tools into one practical workflow: run a model,
-          tune it for your machine, put it to work, and keep what it learns.
+          Turn a local model into a coding partner. Run it, find its sweet spot,
+          build with it, and give it memory. Four tools. One stack. All on your terms.
         </p>
         <div class="actions" role="group" aria-label="Primary links">
-          <a class="button primary" href="#start">Install the stack <span aria-hidden="true">→</span></a>
+          <a class="button primary" href="#start">Try LocalStack <span aria-hidden="true">→</span></a>
           <a class="button secondary" href="#projects">Find the right tool</a>
         </div>
         <p class="hero-note"><span aria-hidden="true">✓</span> Local-first &nbsp;·&nbsp; No usage telemetry &nbsp;·&nbsp; Your data stays yours</p>
       </div>
 
-      <figure class="terminal-logo">
-        <div class="terminal-bar" aria-hidden="true">
-          <span></span><span></span><span></span>
-          <strong>localstack</strong>
+      <div class="stack-experience" data-active="box">
+        <div class="experience-topline"><span><i class="status-dot" aria-hidden="true"></i> THE LOCAL CONNECTION</span><button class="motion-toggle" type="button" hidden aria-pressed="false">Pause motion</button></div>
+        <div class="stack-map" aria-label="Explore the four tools in your local AI stack">
+          <svg class="connection-art" viewBox="0 0 560 390" fill="none" aria-hidden="true">
+            <defs>
+              <pattern id="local-grid" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="matrix(1 .48 -1 .48 280 50)"><path d="M32 0H0V32" stroke="#38d6be" stroke-opacity=".1"/></pattern>
+              <radialGradient id="core-glow"><stop stop-color="#38d6be" stop-opacity=".23"/><stop offset="1" stop-color="#38d6be" stop-opacity="0"/></radialGradient>
+              <linearGradient id="cube-top" x1="235" y1="140" x2="325" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#a2ffdf"/><stop offset="1" stop-color="#38d6be"/></linearGradient>
+              <linearGradient id="cube-side" x1="280" y1="182" x2="328" y2="235" gradientUnits="userSpaceOnUse"><stop stop-color="#199a8b"/><stop offset="1" stop-color="#0e4547"/></linearGradient>
+            </defs>
+            <rect width="560" height="390" fill="url(#local-grid)"/>
+            <ellipse cx="280" cy="205" rx="178" ry="155" fill="url(#core-glow)"/>
+            <g class="orbit-lines" stroke="#38d6be" stroke-opacity=".18">
+              <ellipse cx="280" cy="230" rx="160" ry="70"/>
+              <ellipse cx="280" cy="230" rx="115" ry="50"/>
+              <ellipse cx="280" cy="230" rx="65" ry="28"/>
+              <path d="M120 230H440M280 160V300"/>
+            </g>
+            <g class="network-paths" stroke-width="1.5">
+              <path class="path-box" d="M132 106L280 178" stroke="#38d6be"/>
+              <path class="path-bench" d="M428 106L280 178" stroke="#f0b75a"/>
+              <path class="path-pilot" d="M132 300L280 230" stroke="#7da7ff"/>
+              <path class="path-mind" d="M428 300L280 230" stroke="#69d987"/>
+            </g>
+            <g class="core-float">
+              <path d="M280 131L331 158V218L280 246L229 218V158Z" stroke="#66e7ce" stroke-opacity=".2"/>
+              <path d="M280 145L319 166L280 187L241 166Z" fill="url(#cube-top)"/>
+              <path d="M241 166L280 187V231L241 209Z" fill="#16655f" stroke="#38d6be" stroke-width=".7"/>
+              <path d="M280 187L319 166V209L280 231Z" fill="url(#cube-side)" stroke="#38d6be" stroke-width=".7"/>
+              <path d="M255 177L267 183M255 185L267 191M255 193L267 199" stroke="#8cf9da" stroke-width="2"/>
+              <path d="M291 199L308 190M291 207L308 198" stroke="#51c3b3"/>
+              <path d="M280 145V128M331 158L343 151M229 158L217 151" stroke="#83f5d8" stroke-opacity=".5"/>
+            </g>
+            <ellipse class="core-shadow" cx="280" cy="255" rx="34" ry="12" fill="#38d6be" fill-opacity=".1"/>
+          </svg>
+          <span class="core-label">YOUR MACHINE</span>
+          <button class="tool-node node-box" data-tool="box" type="button" disabled aria-pressed="true" aria-describedby="tool-description"><span class="node-symbol" aria-hidden="true">▣</span><span><strong>LocalBox</strong><small>Run the model</small></span></button>
+          <button class="tool-node node-bench" data-tool="bench" type="button" disabled aria-pressed="false" aria-describedby="tool-description"><span class="node-symbol" aria-hidden="true">▥</span><span><strong>LocalBench</strong><small>Find the sweet spot</small></span></button>
+          <button class="tool-node node-pilot" data-tool="pilot" type="button" disabled aria-pressed="false" aria-describedby="tool-description"><span class="node-symbol" aria-hidden="true">&gt;_</span><span><strong>LocalPilot</strong><small>Put it to work</small></span></button>
+          <button class="tool-node node-mind" data-tool="mind" type="button" disabled aria-pressed="false" aria-describedby="tool-description"><span class="node-symbol" aria-hidden="true">⎇</span><span><strong>LocalMind</strong><small>Keep what it learns</small></span></button>
         </div>
-        <div class="hero-logo-strip" aria-hidden="true">
-          <pre class="stack-icon box">╔══════════════╗
-║ ╔═══╗        ║
-║ ║███║  ████  ║║
-║ ╚═══╝        ║║
-╚══════════════╝║
- ╚══════════════╝</pre>
-          <pre class="stack-icon mind">╔═════╗   ╔═════╗
-║ ███ ║═══║ ███ ║
-║ ███ ║   ║ ███ ║║
-║ ███ ║   ║ ███ ║║
-╚═════╝   ╚═════╝║
- ╚═══════════════╝</pre>
-          <pre class="stack-icon bench">             ▄▄██║
-       ▄▄██║ ████║
- ▄▄██║ ████║ ████║
- ████║ ████║ ████║
-╔════════════════╗
-╚════════════════╝</pre>
-          <pre class="stack-icon pilot">╔══════╗ ╔══╗
-║ &gt;_ █ ║ ║██║║
-╚══╦═══╝ ║██║║
- ══╩══   ╚══╝║
-═════════════╝</pre>
+        <div class="tool-readout" aria-live="polite" aria-atomic="true">
+          <p class="readout-label"><span id="tool-stage">01 / RUN</span><span class="preview-label">WORKFLOW PREVIEW</span></p>
+          <p id="tool-description">A model on your machine. A local endpoint. Ready for your favourite coding tools.</p>
+          <a id="tool-link" href="https://github.com/C0deGeek-dev/LocalBox#run-your-first-model">Meet LocalBox <span aria-hidden="true">↗</span></a>
         </div>
-        <pre class="stack-wordmark" aria-hidden="true"><span class="wordmark-block">██╗      ██████╗  ██████╗ █████╗ ██╗     ███████╗████████╗ █████╗  ██████╗██╗  ██╗
-██║     ██╔═══██╗██╔════╝██╔══██╗██║     ██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝
-██║     ██║   ██║██║     ███████║██║     ███████╗   ██║   ███████║██║     █████╔╝
-██║     ██║   ██║██║     ██╔══██║██║     ╚════██║   ██║   ██╔══██║██║     ██╔═██╗
-███████╗╚██████╔╝╚██████╗██║  ██║███████╗███████║   ██║   ██║  ██║╚██████╗██║  ██╗
-╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝</span></pre>
-        <figcaption>&gt; Run. Tune. Code. Remember. &lt;</figcaption>
-      </figure>
+        <p class="experience-caption">Four tools. One local workflow.</p>
+      </div>
     </section>
 
     <section id="workflow" class="workflow" aria-labelledby="workflow-title">
@@ -107,20 +117,6 @@
         <li class="pilot"><span>03</span><strong>Code</strong><small>LocalPilot gives it tools, research, and a loop</small></li>
         <li class="mind"><span>04</span><strong>Remember</strong><small>LocalMind keeps reviewed memory and docs</small></li>
       </ol>
-    </section>
-
-    <section id="privacy" class="privacy" aria-labelledby="privacy-title">
-      <div class="privacy-copy">
-        <p class="eyebrow">Privacy by design</p>
-        <h2 id="privacy-title">Your machine. Your models. Your data.</h2>
-        <p class="lede">LocalX does not collect your prompts, code, model activity, memories, benchmark results, or usage analytics. The local path stays local, with no LocalX account required.</p>
-        <p class="privacy-note">Choose a hosted provider or download? That network action is explicit and goes only to the service you selected—not through LocalX.</p>
-      </div>
-      <ul class="privacy-points">
-        <li><span aria-hidden="true">01</span><div><strong>No usage telemetry</strong><small>No product analytics or silent reporting back to us.</small></div></li>
-        <li><span aria-hidden="true">02</span><div><strong>Local by default</strong><small>Models, memory, logs, reports, and configuration stay under your control. Cross-device sync is opt-in and end-to-end encrypted.</small></div></li>
-        <li><span aria-hidden="true">03</span><div><strong>Fully yours</strong><small>Inspect it, move it, back it up, or delete it whenever you choose.</small></div></li>
-      </ul>
     </section>
 
     <section id="projects" class="projects" aria-labelledby="projects-title">
@@ -207,16 +203,36 @@
       </div>
     </section>
 
+    <section id="privacy" class="privacy" aria-labelledby="privacy-title">
+      <div class="privacy-copy">
+        <p class="eyebrow">Privacy by design</p>
+        <h2 id="privacy-title">Your machine. Your models. Your data.</h2>
+        <p class="lede">LocalX does not collect your prompts, code, model activity, memories, benchmark results, or usage analytics. The local path stays local, with no LocalX account required.</p>
+        <p class="privacy-note">Choose a hosted provider or download? That network action is explicit and goes only to the service you selected—not through LocalX.</p>
+      </div>
+      <ul class="privacy-points">
+        <li><span aria-hidden="true">01</span><div><strong>No usage telemetry</strong><small>No product analytics or silent reporting back to us.</small></div></li>
+        <li><span aria-hidden="true">02</span><div><strong>Local by default</strong><small>Models, memory, logs, reports, and configuration stay under your control. Cross-device sync is opt-in and end-to-end encrypted.</small></div></li>
+        <li><span aria-hidden="true">03</span><div><strong>Fully yours</strong><small>Inspect it, move it, back it up, or delete it whenever you choose.</small></div></li>
+      </ul>
+    </section>
+
     <section id="start" class="get-started" aria-labelledby="start-title">
       <div class="start-copy">
         <p class="eyebrow">A practical first run</p>
         <h2 id="start-title">One command. Then start small.</h2>
         <p class="lede">Install the whole stack at one version — no Rust toolchain needed. Each download is checked against its published SHA-256 before anything is unpacked.</p>
+        <div class="install-toolbar" hidden>
+          <div class="platform-picker" role="group" aria-label="Installation platform"><button type="button" data-platform="unix" aria-pressed="true">macOS / Linux</button><button type="button" data-platform="windows" aria-pressed="false">Windows</button></div>
+          <button type="button" class="copy-command">Copy command</button>
+        </div>
         <pre class="install-command"><code># Linux / macOS
 curl -fsSL https://raw.githubusercontent.com/C0deGeek-dev/LocalPilot/main/install/install.sh | sh
 
 # Windows
 irm https://raw.githubusercontent.com/C0deGeek-dev/LocalPilot/main/install/install.ps1 | iex</code></pre>
+        <p class="install-feedback" role="status"></p>
+        <p class="install-note">The tools come first. Choose and download a model when you launch LocalBox.</p>
         <a class="text-link" href="https://github.com/C0deGeek-dev/LocalPilot/blob/main/docs/install.md">Read the install guide first <span aria-hidden="true">→</span></a>
       </div>
       <ol class="steps">
@@ -272,6 +288,12 @@ irm https://raw.githubusercontent.com/C0deGeek-dev/LocalPilot/main/install/insta
         </div>
       </details>
     </section>
+    <section class="closing-cta" aria-labelledby="closing-title">
+      <p class="eyebrow">Make it local</p>
+      <h2 id="closing-title">Meet your next coding partner.<br><span class="gradient-text">It lives on your machine.</span></h2>
+      <p>Start with LocalBox. Make the rest of the stack your own.</p>
+      <a class="button primary" href="#start">Give it a try <span aria-hidden="true">→</span></a>
+    </section>
   </main>
 
   <footer>
@@ -285,5 +307,6 @@ irm https://raw.githubusercontent.com/C0deGeek-dev/LocalPilot/main/install/insta
       <a href="https://github.com/C0deGeek-dev/LocalStack">Repository</a>
     </nav>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

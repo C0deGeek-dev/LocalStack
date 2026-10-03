@@ -173,7 +173,8 @@ URL behavior more closely.
 ```text
 LocalStack/
 ├── index.html                         page content and structure
-├── styles.css                         responsive theme
+├── styles.css                         responsive theme and ecosystem animation
+├── site.js                            tool explorer and install controls
 ├── assets/
 │   ├── localstack-mark.svg            favicon and brand mark
 │   ├── localpilot-vs-raw.svg          raw-vs-harness benchmark chart
