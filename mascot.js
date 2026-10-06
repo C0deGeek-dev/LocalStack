@@ -12,7 +12,7 @@ const LINES = {
   sections: {
     workflow: 'Run, tune, code, remember. Take them one at a time.',
     projects: 'Each tool works on its own. Pick the job you have today.',
-    privacy: 'No telemetry. I only follow your cursor, and that never leaves this tab.',
+    privacy: 'No telemetry, only on cursor in this tab.',
     start: 'One command installs the stack. Copy it and I’ll cheer.',
     evidence: 'Same local model in every arm. The harness is the difference.',
     closing: 'Ready when you are. Start small with LocalBox.'
