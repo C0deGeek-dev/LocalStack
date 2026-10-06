@@ -130,7 +130,8 @@ There is no forced LocalX account or cloud service. Remote actions—such as a
 model download or a hosted provider you configure—are explicit choices. When
 you stay on the local path, your working data stays local. The LocalStack site
 itself is static and includes no analytics, cookies, forms, or client-side
-tracking.
+tracking. Its mascot runs in your browser from files served with the site; if
+you hide it, that one preference is kept in your browser's local storage.
 
 ## The toolchain
 
@@ -175,17 +176,25 @@ LocalStack/
 ├── index.html                         page content and structure
 ├── styles.css                         responsive theme and ecosystem animation
 ├── site.js                            tool explorer and install controls
+├── mascot.js                          mascot behaviour: where it stands, walks, and reacts
+├── mascot-model.js                    mascot geometry, rig, and terminal face
 ├── assets/
 │   ├── localstack-mark.svg            favicon and brand mark
 │   ├── localpilot-vs-raw.svg          raw-vs-harness benchmark chart
 │   ├── localpilot-four-arm.svg        four-arm methodology chart
-│   └── og.png                         social preview
+│   ├── og.png                         social preview
+│   └── vendor/three/                  three.js 0.185.0 (MIT), used only by the mascot
 └── VERSION                            release-train version
 ```
 
 ## Editing the site
 
-- Keep the page dependency-free and usable with JavaScript disabled.
+- Keep the page usable with JavaScript disabled, and free of remote
+  dependencies. The mascot is the one optional extra: it loads after the page
+  is idle and nothing else depends on it.
+- `assets/vendor/three/` holds `three.core.min.js` and `three.module.min.js`
+  copied unmodified from the `build/` directory of the `three@0.185.0` npm
+  package. To update, replace both files and the license from one release.
 - Keep project details in their owning repositories; this site is an overview,
   not a second documentation tree.
 - Preserve useful alt text and semantic headings when changing visuals.

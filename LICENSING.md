@@ -26,3 +26,7 @@ public Git history and does not distribute the earlier MIT Git history.
 PolyForm applies only to LocalX-owned source. Dependencies, model weights,
 datasets, tools, generated artifacts, and other third-party materials remain
 subject to their own licenses and terms.
+
+This repository vendors [three.js](https://threejs.org/) under
+`assets/vendor/three/`. It is distributed under the MIT License; see
+[`assets/vendor/three/LICENSE`](assets/vendor/three/LICENSE).
